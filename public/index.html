@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Register – Bagdad Mini-Conference</title>
+<meta name="description" content="Register for the Bagdad Mini-Conference: AA and Al-Anon speakers and fellowship in Carrollton, KY.">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#register">Skip to registration</a>
+
+<header>
+  <h1>Bagdad Mini-Conference</h1>
+  <p><strong data-event="dates">November 6–7, 2026</strong> · <span data-event="place">Relevant Church, Carrollton, KY</span></p>
+  <p>AA &amp; Al-Anon speakers and fellowship</p>
+</header>
+
+<main class="wrap">
+
+  <div class="price-bar">
+    <strong>$<span data-price="registration">30</span> per person</strong> if you register by
+    <strong data-event="closesLabel">October 30</strong><br>
+    $<span data-event="doorPrice">35</span> at the door after that
+  </div>
+
+  <section id="closed">
+    <h2>Online registration is closed</h2>
+    <p>You can still join us! Register at the door for $<span data-event="doorPrice">35</span>
+      during check-in (<span data-event="checkIn"></span>).</p>
+  </section>
+
+  <!-- Shown after a successful payment, in place of the form -->
+  <section id="thanks" aria-live="polite" tabindex="-1">
+    <h2>You're registered!</h2>
+    <p id="thanks-summary"></p>
+    <p>Just give your name at check-in (<span data-event="checkIn"></span>).</p>
+    <p><strong>Don't forget your room:</strong> call General Butler State Park at
+      <a data-event-href="lodgingPhone" href="tel:5027324384"><span data-event="lodgingPhone">(502) 732-4384</span></a>
+      and use group code <span class="code" data-event="lodgingCode">7502</span></p>
+  </section>
+
+  <form id="register" novalidate>
+    <section>
+      <h2>1. Who's coming?</h2>
+      <p class="hint">First name and last initial is all we need. It goes on your name badge.</p>
+
+      <div id="attendees"></div>
+      <button type="button" class="secondary" id="add">+ Add another person</button>
+
+      <label for="email">Email <span class="hint">(so we can reach you about the event)</span></label>
+      <input type="email" id="email" placeholder="you@example.com" autocomplete="email" required>
+
+      <label for="phone">Phone <span class="hint">(optional)</span></label>
+      <input type="tel" id="phone" placeholder="(555) 555-5555" autocomplete="tel">
+    </section>
+
+    <section id="shirt-section">
+      <h2>2. T-shirt add-on <span class="hint">(optional)</span></h2>
+      <p class="hint">$<span data-price="shirt">30</span> each. Order by <span data-event="closesLabel">October 30</span>
+        and pick them up when you check in, with no shipping. Shirts will also be sold at the conference.</p>
+      <div class="shirt-grid" id="shirt-grid"></div>
+      <div id="shirt-cart" aria-live="polite"></div>
+    </section>
+
+    <section>
+      <h2>3. Extras <span class="hint">(all optional)</span></h2>
+
+      <label for="donation">Richard VanCleave Scholarship donation
+        <span class="hint">helps a newcomer attend</span></label>
+      <input type="number" id="donation" min="0" step="1" placeholder="$0" inputmode="numeric">
+
+      <label class="check">
+        <input type="checkbox" id="snack">
+        <span>I'll bring a snack or dessert for the hospitality cottage</span>
+      </label>
+
+      <div class="help-box">
+        <strong>Need help with the cost?</strong> The scholarship fund can cover registration,
+        lodging and meals. Ask privately — no need to pay here first:
+        <a href="tel:8597974120">Cole W., (859) 797-4120</a> or
+        <a href="mailto:BagdadAA@Outlook.com?subject=Scholarship%20request">email us</a>.
+      </div>
+    </section>
+
+    <section>
+      <h2>4. Review &amp; pay</h2>
+      <div class="total-lines" id="lines"></div>
+      <div class="total"><span>Total</span><span id="total">$30</span></div>
+      <div id="paypal-buttons"></div>
+      <div id="msg" class="msg" role="alert"></div>
+      <p class="pay-note">Pay with Venmo, PayPal, or a debit/credit card (no PayPal account needed).<br>
+        The Venmo button appears on phones in the US.</p>
+    </section>
+  </form>
+
+  <section class="lodging">
+    <h2>Book your room now</h2>
+    <p>Lodging is booked directly with <strong>General Butler State Resort Park</strong>
+      (lodge rooms, cabins for 2–8 people, and a campground with playgrounds).</p>
+    <p>Use group code: <span class="code" data-event="lodgingCode">7502</span><br>
+      <span class="hint">Without the code you won't get the discounted rate.</span></p>
+    <p>📞 <a data-event-href="lodgingPhone" href="tel:5027324384"><span data-event="lodgingPhone">(502) 732-4384</span></a><br>
+      🌐 <a data-event-href="lodgingUrl" href="https://parks.ky.gov/explore/general-butler-state-resort-park-7789">Book online at parks.ky.gov</a></p>
+  </section>
+
+  <section>
+    <h2>Schedule</h2>
+    <p><strong>Friday, Nov 6</strong></p>
+    <table>
+      <tr><td>3:00–5:00</td><td>Check-in</td></tr>
+      <tr><td>7:30–8:00</td><td>Late check-in</td></tr>
+      <tr><td>8:00</td><td>AA speaker</td></tr>
+      <tr><td>9:00</td><td>Hospitality cottage</td></tr>
+    </table>
+    <p><strong>Saturday, Nov 7</strong></p>
+    <table>
+      <tr><td>9:45</td><td>Al-Anon speaker</td></tr>
+      <tr><td>11:00</td><td>AA speaker</td></tr>
+      <tr><td></td><td>Free time &amp; fellowship</td></tr>
+      <tr><td>4:30</td><td>AA speaker</td></tr>
+      <tr><td>7:45</td><td>Sobriety countdown</td></tr>
+      <tr><td>8:00</td><td>AA speaker</td></tr>
+      <tr><td>9:00</td><td>Hospitality cottage</td></tr>
+    </table>
+    <p><strong>Speakers:</strong> Harold L. (St. Louis, MO) · Matt W. (Eureka, MO) ·
+      Becky H., Al-Anon (Lexington, KY) · Melissa C. (Akron, OH) · Tom U. (Santa Fe, NM)</p>
+  </section>
+
+  <section>
+    <h2>Prefer to register by mail?</h2>
+    <ol>
+      <li><a href="#">Download the registration form</a> and fill it out (you can list several people).</li>
+      <li>Make a check or money order out to <strong>Bagdad Retreat Inc</strong>: $<span data-price="registration">30</span>
+        per person, plus any scholarship donation.</li>
+      <li>Mail it, postmarked by <strong data-event="closesLabel">October 30</strong>, to:<br>
+        Bagdad Retreat Inc<br>421 Stonehedge Place<br>Lexington, KY 40517</li>
+    </ol>
+  </section>
+
+  <footer>
+    Questions? <a href="mailto:BagdadAA@Outlook.com">BagdadAA@Outlook.com</a><br>
+    <a href="#">Facebook group</a> · <a href="https://www.tiktok.com/@bagdadminiconference">TikTok</a>
+  </footer>
+
+</main>
+
+<script src="/register.js"></script>
+</body>
+</html>

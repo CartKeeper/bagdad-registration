@@ -1,0 +1,17 @@
+{
+  "name": "bagdad-registration",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Online registration, PayPal/Venmo checkout and volunteer check-in for the Bagdad Mini-Conference",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "netlify dev",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "nodemailer": "^7.0.0"
+  }
+}

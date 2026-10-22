@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Volunteers – Bagdad Registration</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body class="admin">
+
+<header>
+  <h1>Bagdad registrations</h1>
+  <p>Volunteer page</p>
+</header>
+
+<main class="wrap">
+
+  <section id="login">
+    <h2>Sign in</h2>
+    <form id="login-form">
+      <label for="password">Volunteer password</label>
+      <input type="password" id="password" autocomplete="current-password" required>
+      <p><button class="primary" type="submit">Sign in</button></p>
+      <div id="login-msg" class="msg" role="alert"></div>
+    </form>
+  </section>
+
+  <div id="app" hidden>
+    <div class="stats" id="stats"></div>
+
+    <section>
+      <h2>Attendees</h2>
+      <div class="toolbar">
+        <input type="search" id="search" placeholder="Search name or email" aria-label="Search attendees">
+        <label class="check" style="margin:0"><input type="checkbox" id="show-unpaid"><span>Show unfinished checkouts</span></label>
+        <button type="button" class="secondary" id="refresh">Refresh</button>
+        <button type="button" class="secondary" id="csv-people">Download attendees (CSV)</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Name</th><th>Attending as</th><th>First time</th><th>Contact</th><th>Registration paid</th><th>Check-in</th></tr></thead>
+          <tbody id="people"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>T-shirts to order / hand out</h2>
+      <div class="toolbar"><button type="button" class="secondary" id="csv-shirts">Download shirt list (CSV)</button></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Design</th><th>Size</th><th>Qty</th></tr></thead>
+          <tbody id="shirt-totals"></tbody>
+        </table>
+      </div>
+      <h3>Pickup list</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Pick up under</th><th>Shirts</th></tr></thead>
+          <tbody id="shirt-pickups"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Add a mail-in or at-the-door registration</h2>
+      <form id="add-form">
+        <div class="row">
+          <div>
+            <label for="add-source">How they paid</label>
+            <select id="add-source">
+              <option value="mail">Mail-in check / money order</option>
+              <option value="door">At the door</option>
+            </select>
+          </div>
+          <div>
+            <label for="add-note">Note <span class="hint">(check #, cash, etc.)</span></label>
+            <input type="text" id="add-note" maxlength="300">
+          </div>
+        </div>
+        <label for="add-people">People <span class="hint">one per line: First name, Last initial, AA / Al-Anon / Guest, first (if first time)</span></label>
+        <textarea id="add-people" rows="4" style="width:100%;font-size:1rem;padding:10px;border:1px solid #bbb;border-radius:6px"
+          placeholder="Pat, M, AA, first&#10;Sam, K, Al-Anon"></textarea>
+        <label for="add-shirts">T-shirts <span class="hint">one per line: size, quantity (e.g. "XL, 2")</span></label>
+        <textarea id="add-shirts" rows="2" style="width:100%;font-size:1rem;padding:10px;border:1px solid #bbb;border-radius:6px"></textarea>
+        <div class="row">
+          <div><label for="add-donation">Scholarship donation ($)</label><input type="number" id="add-donation" min="0" step="1"></div>
+          <div><label for="add-email">Email <span class="hint">(optional)</span></label><input type="email" id="add-email"></div>
+          <div><label for="add-phone">Phone <span class="hint">(optional)</span></label><input type="tel" id="add-phone"></div>
+        </div>
+        <p><button class="primary" type="submit">Add registration</button></p>
+        <div id="add-msg" class="msg" role="alert"></div>
+      </form>
+    </section>
+
+    <section>
+      <h2>Needs a look</h2>
+      <p class="hint">Payments flagged for review (amount didn't match, or PayPal is holding the payment). Check them in PayPal.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>When</th><th>People</th><th>Email</th><th>Expected</th><th>Paid</th><th>PayPal capture</th></tr></thead>
+          <tbody id="review"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <p style="text-align:center"><button type="button" class="secondary" id="logout">Sign out</button></p>
+  </div>
+</main>
+
+<script src="/admin/admin.js"></script>
+</body>
+</html>

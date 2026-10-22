@@ -1,0 +1,167 @@
+:root {
+  --orange: #c8571b;
+  --orange-dark: #a3440f;
+  --ink: #2b2b2b;
+  --muted: #666;
+  --line: #e2d9cf;
+  --cream: #faf6f0;
+  --error: #b3261e;
+  --ok: #2e6b30;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--cream);
+}
+.wrap { max-width: 680px; margin: 0 auto; padding: 0 16px 48px; }
+header {
+  background: var(--orange);
+  color: #fff;
+  text-align: center;
+  padding: 28px 16px;
+}
+header h1 { margin: 0; font-size: 1.9rem; }
+header p { margin: 4px 0 0; }
+.price-bar {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 20px 0;
+  text-align: center;
+}
+.price-bar strong { font-size: 1.4rem; color: var(--orange-dark); }
+section {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+h2 { margin: 0 0 12px; font-size: 1.3rem; color: var(--orange-dark); }
+label { display: block; font-weight: 600; margin: 12px 0 4px; }
+.hint { font-weight: 400; color: var(--muted); font-size: 0.9rem; }
+input[type=text], input[type=email], input[type=tel], input[type=number], input[type=search], input[type=password], select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+}
+input.invalid { border-color: var(--error); background: #fff5f4; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; }
+.row > div { flex: 1 1 200px; }
+.attendee {
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  background: var(--cream);
+}
+.attendee h3 { margin: 0; font-size: 1rem; display: flex; justify-content: space-between; }
+.remove { background: none; border: none; color: var(--orange-dark); cursor: pointer; font-size: 0.9rem; }
+.check { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; margin: 12px 0; }
+.check input { margin-top: 5px; width: 18px; height: 18px; }
+button.secondary {
+  background: #fff;
+  color: var(--orange-dark);
+  border: 2px solid var(--orange);
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  margin-top: 16px;
+}
+.total-lines { color: var(--muted); font-size: 0.95rem; }
+.total-lines div { display: flex; justify-content: space-between; }
+.shirt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+.shirt-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.shirt-card img {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border-radius: 6px;
+}
+.shirt-card h3 { font-size: 1rem; margin: 8px 0 0; }
+.shirt-card .price { color: var(--orange-dark); font-weight: 700; margin-bottom: 4px; }
+.shirt-card .row { gap: 8px; margin-top: auto; }
+.shirt-card .row > div { flex: 1 1 70px; }
+.shirt-card label { margin: 6px 0 2px; font-size: 0.85rem; }
+.shirt-card button { width: 100%; margin-top: 10px; }
+#shirt-cart { margin-top: 14px; }
+#shirt-cart div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding: 6px 0;
+}
+#paypal-buttons { margin-top: 16px; min-height: 50px; }
+.pay-note { text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 8px; }
+.msg { border-radius: 8px; padding: 10px 14px; margin-top: 12px; display: none; }
+.msg.error { display: block; background: #fff5f4; color: var(--error); border: 1px solid #f0c4c0; }
+.msg.info { display: block; background: var(--cream); color: var(--ink); border: 1px solid var(--line); }
+.help-box { background: var(--cream); border-radius: 8px; padding: 10px 14px; margin-top: 12px; }
+.lodging { border: 2px solid var(--orange); }
+.code {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: var(--cream);
+  border-radius: 6px;
+  padding: 2px 12px;
+}
+#thanks { display: none; border: 2px solid var(--ok); }
+#thanks h2 { color: var(--ok); }
+table { width: 100%; border-collapse: collapse; }
+td { padding: 4px 0; vertical-align: top; }
+td:first-child { width: 90px; color: var(--muted); }
+a { color: var(--orange-dark); }
+footer { text-align: center; color: var(--muted); font-size: 0.9rem; }
+
+/* Shown instead of the form after the deadline */
+#closed { display: none; text-align: center; }
+.skip-link { position: absolute; left: -9999px; }
+.skip-link:focus { left: 16px; top: 8px; background: #fff; padding: 6px 10px; }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+
+/* Volunteer page */
+.admin .wrap { max-width: 1100px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 20px 0; }
+.stat { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.stat b { display: block; font-size: 1.6rem; color: var(--orange-dark); }
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
+.toolbar input[type=search] { flex: 1 1 220px; width: auto; }
+.table-wrap { overflow-x: auto; }
+.admin table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+.admin th, .admin td { text-align: left; padding: 8px; border-bottom: 1px solid var(--line); width: auto; color: var(--ink); }
+.admin th { background: var(--cream); position: sticky; top: 0; }
+.tag { display: inline-block; font-size: 0.8rem; padding: 1px 8px; border-radius: 99px; background: var(--cream); border: 1px solid var(--line); }
+.tag.review { background: #fff5f4; color: var(--error); border-color: #f0c4c0; }
+.tag.pending { color: var(--muted); }
+button.checkin { min-width: 120px; }
+button.checkin.done { background: var(--ok); border-color: var(--ok); color: #fff; }
+button.primary {
+  background: var(--orange); color: #fff; border: none; border-radius: 6px;
+  padding: 10px 16px; font-size: 1rem; cursor: pointer;
+}
+button.primary:disabled { opacity: 0.6; cursor: wait; }
