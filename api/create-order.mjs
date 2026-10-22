@@ -2,9 +2,9 @@
 // and saves the registration as "pending" until the payment is captured.
 
 import { randomUUID } from 'node:crypto';
-import { buildOrder } from '../../lib/order.js';
-import { orderBody } from '../../lib/paypal.js';
-import { endpoint, json, readJson } from '../../lib/http.js';
+import { buildOrder } from '../lib/order.js';
+import { orderBody } from '../lib/paypal.js';
+import { endpoint, json, readJson } from '../lib/http.js';
 
 export const handle = endpoint('POST', async (req, { db, paypal, now }) => {
   const order = buildOrder(await readJson(req), { now: now() });
@@ -27,6 +27,3 @@ export const handle = endpoint('POST', async (req, { db, paypal, now }) => {
   );
   return json(200, { id: created.id });
 });
-
-export default (req) => handle(req);
-export const config = { path: '/api/create-order' };

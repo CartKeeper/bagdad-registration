@@ -1,10 +1,10 @@
 // POST /api/capture-order { orderId } — takes the payment the person just approved,
 // checks PayPal charged exactly what we priced, and marks the registration paid.
 
-import { PayPalError, captureOf } from '../../lib/paypal.js';
-import { ValidationError, badge, dollars } from '../../lib/order.js';
-import { confirmationEmail } from '../../lib/email.js';
-import { endpoint, json, readJson } from '../../lib/http.js';
+import { PayPalError, captureOf } from '../lib/paypal.js';
+import { ValidationError, badge, dollars } from '../lib/order.js';
+import { confirmationEmail } from '../lib/email.js';
+import { endpoint, json, readJson } from '../lib/http.js';
 
 const peopleOf = (reg) =>
   [...(reg.attendees ?? [])]
@@ -75,6 +75,3 @@ export const handle = endpoint('POST', async (req, { db, paypal, send, now }) =>
   }
   return json(200, summary(done));
 });
-
-export default (req) => handle(req);
-export const config = { path: '/api/capture-order' };

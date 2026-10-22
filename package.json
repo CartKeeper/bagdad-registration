@@ -5,10 +5,11 @@
   "description": "Online registration, PayPal/Venmo checkout and volunteer check-in for the Bagdad Mini-Conference",
   "type": "module",
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "scripts": {
-    "dev": "netlify dev",
+    "start": "node server.js",
+    "dev": "node --env-file=.env --watch server.js",
     "test": "node --test"
   },
   "dependencies": {

@@ -3,9 +3,9 @@
 //   POST { action: 'checkin', attendeeId, checkedIn }
 //   POST { action: 'add', source: 'mail' | 'door', note, ...same fields as the public form }
 
-import { EVENT, PRICES } from '../../lib/settings.js';
-import { ValidationError, buildOrder } from '../../lib/order.js';
-import { endpoint, isAdmin, json, readJson } from '../../lib/http.js';
+import { EVENT, PRICES } from '../lib/settings.js';
+import { ValidationError, buildOrder } from '../lib/order.js';
+import { endpoint, isAdmin, json, readJson } from '../lib/http.js';
 
 const UUID = /^[0-9a-f-]{36}$/i;
 
@@ -61,6 +61,3 @@ async function handleAdmin(req, { env, db, now }) {
 const get = endpoint('GET', handleAdmin);
 const post = endpoint('POST', handleAdmin);
 export const handle = (req, services) => (req.method === 'GET' ? get : post)(req, services);
-
-export default (req) => handle(req);
-export const config = { path: '/api/admin' };
